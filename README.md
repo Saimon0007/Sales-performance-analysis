@@ -133,21 +133,10 @@ This repository supports standard and advanced sales analytics workflows:
 - Orders / Transactions
 - Average Order Value (AOV)
 - Conversion / Purchase Rate (if traffic data available)
-- Customer Lifetime Value (CLV)
-- Retention & Churn rates
 - Gross & Net margins (if cost data available)
 - Product/Category contribution
 
 ---
-
-## 🔗 SQL Operations
-
-The `SQL Operations/` folder contains reusable query templates (suggested filenames):
-
-- `sales_summary_queries.sql` — overall KPIs, time-series aggregations  
-- `customer_segmentation.sql` — RFM scoring, top customers, cohort tables  
-- `product_analysis.sql` — product/category revenue, returns, margins  
-- `advanced_analytics.sql` — window functions, cohort persistence, ARPU, CLV calculations
 
 Example: Revenue by category
 ```sql
@@ -159,16 +148,6 @@ GROUP BY product_category
 ORDER BY total_revenue DESC;
 ```
 
-Top 10 customers (lifetime value)
-```sql
-SELECT customer_id,
-       SUM(revenue) AS lifetime_value,
-       COUNT(DISTINCT order_id) AS orders
-FROM sales_data
-GROUP BY customer_id
-ORDER BY lifetime_value DESC
-LIMIT 10;
-```
 
 Monthly sales trend
 ```sql
@@ -249,4 +228,4 @@ If this repository helps you:
 
 ---
 
-Made with ❤️ by [Saimon0007](https://github.com/Saimon0007)
+Made by [Saimon0007](https://github.com/Saimon0007)
